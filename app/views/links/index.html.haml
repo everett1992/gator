@@ -1,21 +1,12 @@
-%h1 Listing links
-
-%table
-  %tr
-    %th Title
-    %th Url
-    %th
-    %th
-    %th
-
-  - @links.each do |link|
-    %tr
-      %td= link.title
-      %td= link.url
-      %td= link_to 'Show', link
-      %td= link_to 'Edit', edit_link_path(link)
-      %td= link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= link_to 'Submit New Link', new_link_path
+- @links.each do |link|
+  %h3= link_to link.title, link.path
+  /%tr
+  /  %td= link.title
+  /  %td= link.url
+  /  %td= link_to 'Show', link
+  /  %td= link_to 'Edit', edit_link_path(link)
+  /  %td= link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Link', new_link_path
