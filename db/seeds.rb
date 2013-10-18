@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+links = [
+  {title: "Google is Cool", url: "google.com"},
+  {title: "But Duck Duck Go is Better", url: "duckduckgo.com"}
+]
+
+puts "Creating links..."
+links.each { |link| Link.create link }
+
+puts "There are #{Link.count} links."
